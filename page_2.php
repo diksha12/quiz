@@ -64,96 +64,96 @@
 			margin: auto;
 		}
 		.l_name
-	{
-  	width: 200px;
-	height: 40px;
-	margin-left: 15px;
-	margin-top: 10px;
-	border-radius: 7px;
-	border-color: grey;
-	background-color: #ecf0f1;
-	font-size: 20px;
-	}
-.f_name
-	{
-	width: 200px;
-	height: 40px;
-	margin-left: 104px;
-	margin-top: 10px;
-	border-radius: 7px;
-	border-color: grey;
-	background-color: #ecf0f1;
-	font-size: 20px;
-	}
-.u_name
-	{
-	width: 420px;
-	height: 40px;
-	margin-left: 73px;
-	margin-top: 10px;
-	border-radius: 7px;
-	border-color: grey;
-	background-color: #ecf0f1;
-	font-size: 20px;
-	}
-.pass
-	{
-	width: 420px;
-	height: 40px;
-	margin-left: 79px;
-	margin-top: 10px;
-	border-radius: 7px;
-	border-color: grey;
-	background-color: #ecf0f1;
-	font-size: 20px;
-	}
-.r_pass
-	{
-	width: 420px;
-	height: 40px;
-	margin-left: 23px;
-	margin-top: 10px;
-	border-radius: 7px;
-	border-color: grey;
-	background-color: #ecf0f1;
-	font-size: 20px;
+			{
+		  	width: 200px;
+			height: 40px;
+			margin-left: 15px;
+			margin-top: 10px;
+			border-radius: 7px;
+			border-color: grey;
+			background-color: #ecf0f1;
+			font-size: 20px;
+			}
+		.f_name
+			{
+			width: 200px;
+			height: 40px;
+			margin-left: 104px;
+			margin-top: 10px;
+			border-radius: 7px;
+			border-color: grey;
+			background-color: #ecf0f1;
+			font-size: 20px;
+			}
+		.u_name
+			{
+			width: 420px;
+			height: 40px;
+			margin-left: 73px;
+			margin-top: 10px;
+			border-radius: 7px;
+			border-color: grey;
+			background-color: #ecf0f1;
+			font-size: 20px;
+			}
+		.pass
+			{
+			width: 420px;
+			height: 40px;
+			margin-left: 79px;
+			margin-top: 10px;
+			border-radius: 7px;
+			border-color: grey;
+			background-color: #ecf0f1;
+			font-size: 20px;
+			}
+		.r_pass
+			{
+			width: 420px;
+			height: 40px;
+			margin-left: 23px;
+			margin-top: 10px;
+			border-radius: 7px;
+			border-color: grey;
+			background-color: #ecf0f1;
+			font-size: 20px;
 
-	}
-.dob
-	{
-	width: 420px;
-	height: 40px;
-	margin-left: 51px;
-	margin-top: 10px;
-	border-radius: 7px;
-	border-color: grey;
-	background-color: #ecf0f1;
-	font-size: 20px;
-	}
-.check_m
-	{
-	margin-left: 51px;
-	margin-top: 20px;
-	}
-.check_f
-	{
-	margin-left: 161px;
-	margin-top: 20px;
-	}
-.submit
-	{
-	width: 162px;
-	height: 62px;
-	background-color: #2c3e50;
-	font-size: 19px;
-	color: white;
-	padding: 0px;
-	border:none;
-	margin-left :150px;
-	margin-top: 30px;
-	border-radius: 3px;
-	cursor: pointer;
-	}
+			}
+		.dob
+			{
+			width: 420px;
+			height: 40px;
+			margin-left: 51px;
+			margin-top: 10px;
+			border-radius: 7px;
+			border-color: grey;
+			background-color: #ecf0f1;
+			font-size: 20px;
+			}
+		.check_m
+			{
+			margin-left: 51px;
+			margin-top: 20px;
+			}
+		.check_f
+			{
+			margin-left: 161px;
+			margin-top: 20px;
+			}
+		.submit
+			{
+			width: 162px;
+			height: 62px;
+			background-color: #2c3e50;
+			font-size: 19px;
+			color: white;
+			padding: 0px;
+			border:none;
+			margin-left :150px;
+			margin-top: 30px;
+			border-radius: 3px;
+			cursor: pointer;
+			}
 
 	</style>
 
@@ -169,7 +169,7 @@
 	<div class="box ">
 		<div class="create_form">
 			<div class="form_box">
-			<form method="post" class="abb" action="page_3.php">
+			<form method="post" class="abb" action="add.php" >
 			Name         : 
 			<input type="text" name="name1" placeholder="First name" class="f_name">
 			<input type="text" name="name2" placeholder="Last name" class='l_name' >
@@ -197,11 +197,52 @@
 </div>
 <script type="text/javascript">
 	$('#home').click(function(){
-			window.location.assign("/skillclas/add.php");
+			window.location.assign("/skillclas/quiz/add.php");
 		});
 	$("button").click(function(){
-			window.location.assign("/skillclas/page_5.php")
+			window.location.assign("/skillclas/quiz/page_5.php")
 	});
 </script>
 </body>
 </html>
+<?php
+
+	if ($_SERVER['REQUEST_METHOD']=='POST') 
+	{
+		//session_start();
+		$link = new mysqli('localhost','root','','database');
+		$f_name = $_POST['name1'];
+		$l_name = $_POST['name2'];
+		$u_name = $_POST['user_name'];
+		$password = $_POST['password'];
+		$r_pass = $_POST['password1'];
+		$dob = $_POST['dob'];
+		$gender = $_POST['gender'];
+
+		if ($password===$r_pass) 
+		{
+		
+		$query1 = "INSERT INTO create_quiz (f_name,l_name,u_name,password,dob,gender) VAlUES (?,?,?,?,?,?)";
+		$stmt1 = $link->prepare($query1);
+		$stmt1->bind_param('ssssss', $f_name, $l_name, $u_name,$password,$dob,$gender);
+		
+		$stmt1->execute();
+
+		header('location:add.php');
+		
+		echo $link->error;
+
+		$stmt1->close();
+
+		}
+		else
+		{
+		echo "<script type=\"text/javascript\">".
+			  "window.alert('incorect password');".
+  				"</script>"; 
+		}
+	
+				
+	echo $_SESSION['u_id'];
+}
+?>

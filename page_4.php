@@ -257,7 +257,7 @@
 			});	
 		});
 		$('.home').click(function(){
-			window.location.assign("/skillclas/page_3.php");
+			window.location.assign("/skillclas/quiz/page_3.php");
 		});
 		$('#hello_user').click(function(){
   			$('#details').hide();
@@ -275,11 +275,23 @@
 </body>
 </html> 
 <?php
-$link = new mysqli('localhost','root','','database');
+
+if ($_SERVER['REQUEST_METHOD']=='POST') 
+{
+session_start();
+
+/*$link = new mysqli('localhost','root','','database');
 		 $var1 = rand(1,21);
 		 $query1 = "SELECT question FROM question_database_it WHERE que_n = (?)";
 		 $stmt1 = $link->prepare($query1);
 		$stmt1->bind_param('s', $var1);		
-		$stmt1->execute();
+		$stmt1->execute();*/
+echo $_SESSION['u_id'];
+echo "<script type=\"text/javascript\">".
+					  "window.alert( '$_SESSION['u_id']');".
+		  				"</script>"; 
+
+}
+
 
 ?>  

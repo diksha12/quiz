@@ -120,49 +120,16 @@
 </div>
 <script type="text/javascript">
 	$('#home').click(function(){
-		window.location.assign("/skillclas/page_3.php");
+		window.location.assign("/skillclas/quiz/page_3.php");
 	});
 	$('.list_option_1').click(function(){
-		window.location.assign("/skillclas/page_5.php");
+		window.location.assign("/skillclas/quiz/page_5.php");
 	});
 	$('.list_option_2').click(function(){
-	window.location.assign("/skillclas/page_4.php");
+	window.location.assign("/skillclas/quiz/page_4.php");
 	});
 	
 
 </script>
 </body>
 </html>
-<?php
-
-	if ($_SERVER['REQUEST_METHOD']=='POST') 
-	{
-		$link = new mysqli('localhost','root','','database');
-		$f_name = $_POST['name1'];
-		$l_name = $_POST['name2'];
-		$u_name = $_POST['user_name'];
-		$password = $_POST['password'];
-		$r_pass = $_POST['password1'];
-		$dob = $_POST['dob'];
-		$gender = $_POST['gender'];
-
-		if ($password===$r_pass) 
-		{
-		
-		$query1 = "INSERT INTO create_quiz (f_name,l_name,u_name,password,dob,gender) VAlUES (?,?,?,?,?,?)";
-		$stmt1 = $link->prepare($query1);
-		$stmt1->bind_param('ssssss', $f_name, $l_name, $u_name,$password,$dob,$gender);
-		
-		$stmt1->execute();
-		echo $link->error;
-		$stmt1->close();
-		}
-		else
-		{
-		echo "<script type=\"text/javascript\">".
-			  "window.alert('incorect password');".
-  				"</script>"; 
-		}
-	}
-
-?>

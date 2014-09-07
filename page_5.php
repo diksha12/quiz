@@ -300,7 +300,7 @@
 			$('#details').show();
 		});
 		$('.home').click(function(){
-			window.location.assign("/skillclas/page_3.php");
+			window.location.assign("/skillclas/quiz/page_3.php");
 		});
 		$('#hello_user').click(function(){
   			$('#details').hide();

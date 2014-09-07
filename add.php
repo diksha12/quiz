@@ -1,4 +1,4 @@
- n<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 	<title>home</title>
@@ -120,6 +120,10 @@
 			height: 27px;
 			width: 56px;
 		}
+		.login_error
+		{
+			margin-left: 23px;
+		}
 	</style>
 </head>
 <body>
@@ -153,13 +157,13 @@
 </div>
 <script type="text/javascript">
 	$('.button').click(function(){
-		window.location.assign("/skillclas/page_3.php");
+		window.location.assign("/skillclas/quiz/page_3.php");
 	});
 	$('#create_account').click(function(){
-		window.location.assign("/skillclas/page_2.php")
+		window.location.assign("/skillclas/quiz/page_2.php")
 	});
 	$('#login_error').click(function(){
-		window.location.assign("/skillclas/error_page.php")
+		window.location.assign("/skillclas/quiz/error_page.php")
 	});
 
 </script>
@@ -168,6 +172,7 @@
 <?php
 if ($_SERVER['REQUEST_METHOD']=='POST') 
 	{
+		session_start();
 		$link = new mysqli('localhost','root','','database');
 			$user_name = $_POST['user_name'];
 			$pass = $_POST['pass'];
@@ -194,5 +199,14 @@ if ($_SERVER['REQUEST_METHOD']=='POST')
 					  "window.alert('Error in username or password');".
 		  				"</script>"; 
 				}
+				$query2 = " SELECT u_id FROM create_quiz WHERE u_name='$user_name'";
+				$link1 = mysql_connect('localhost','root','');
+ 				mysql_select_db('database');
+				$result = mysql_query($query2);
+				echo mysql_error();
+				$row = mysql_fetch_array($result);
+				$u_id = $row['u_id'];				
+				$_SESSION['u_id_login']= $u_id;
+
 		}
 ?>

@@ -20,23 +20,18 @@
 </body>
 </html>
 <?php
-$con=mysqli_connect('localhost','root','','database');
-// Check connection
-if (mysqli_connect_errno()) {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
 
-$result = mysqli_query($con,"SELECT * FROM create_quiz");
-$result1 = mysqli_query($con,"SELECT u_id FROM create_quiz WHERE 1");
-//echo $result1 ;
-$u_id = mysqli_fetch_array($result1);
-//echo $u_id['u_id'];
-echo "<br>";
-while($row = mysqli_fetch_array($result)) {
+  $query1 = " SELECT * FROM create_quiz WHERE u_id=";
+        $link1 = mysql_connect('localhost','root','');
+        mysql_select_db('database');
+        $res = mysql_query($query1);
+        echo mysql_error();
+        $row = mysql_fetch_array($res);
+    
   echo "Username :";
-   echo $row['u_name'];
-   echo "<br>";
-   echo "Name :";
+  echo $row['u_name'];
+  echo "<br>";
+  echo "Name :";
   echo $row['f_name'] . " " . $row['l_name'];
   echo "<br>";
   echo "Date of birth :";
@@ -48,7 +43,6 @@ while($row = mysqli_fetch_array($result)) {
   echo $row['u_id'];
   echo "<br>";
   
-}
 
 mysqli_close($con);
 ?> 
