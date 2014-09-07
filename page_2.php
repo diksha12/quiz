@@ -208,41 +208,7 @@
 <?php
 
 	if ($_SERVER['REQUEST_METHOD']=='POST') 
-	{
-		//session_start();
-		$link = new mysqli('localhost','root','','database');
-		$f_name = $_POST['name1'];
-		$l_name = $_POST['name2'];
-		$u_name = $_POST['user_name'];
-		$password = $_POST['password'];
-		$r_pass = $_POST['password1'];
-		$dob = $_POST['dob'];
-		$gender = $_POST['gender'];
-
-		if ($password===$r_pass) 
-		{
-		
-		$query1 = "INSERT INTO create_quiz (f_name,l_name,u_name,password,dob,gender) VAlUES (?,?,?,?,?,?)";
-		$stmt1 = $link->prepare($query1);
-		$stmt1->bind_param('ssssss', $f_name, $l_name, $u_name,$password,$dob,$gender);
-		
-		$stmt1->execute();
-
-		header('location:add.php');
-		
-		echo $link->error;
-
-		$stmt1->close();
-
-		}
-		else
-		{
-		echo "<script type=\"text/javascript\">".
-			  "window.alert('incorect password');".
-  				"</script>"; 
-		}
-	
-				
+	{				
 	echo $_SESSION['u_id'];
-}
+	}
 ?>

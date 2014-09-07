@@ -95,11 +95,15 @@
 			padding-top: 95px;
 			padding-left: 44px;
 		}
+		.size
+		{
+			font-size: 40px;
+		}
 
 	</style>
 </head>
 <body>
-<div id="page_3 " >
+<div id="page_3 " class="size">
 	<div class="page_3 ">
 		<div class="upper_block">
 			<div class="in_box" id="home">
@@ -133,3 +137,8 @@
 </script>
 </body>
 </html>
+<?php
+	session_start();
+	
+	echo $_SESSION['u_id'];
+?>
