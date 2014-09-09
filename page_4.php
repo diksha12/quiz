@@ -103,6 +103,70 @@
 		    background-repeat: no-repeat;
 		    
 		}
+		.it_background
+		{
+		height: 700px;
+		width: 100%;
+		background-color: red;
+		background-image: url(./it.jpg);
+		background-size: 1500px;
+		background-repeat: no-repeat;
+		
+		
+		}
+		.wildlife_background
+		{
+		height: 700px;
+		width: 100%;
+		background-color: red;
+		background-image: url(./wildlife.jpg);
+		background-size: 1500px;
+		background-repeat: no-repeat;
+		
+		}
+		.sports_background
+		{
+		height: 700px;
+		width: 100%;
+		background-color: red;
+		background-image: url(./sports.jpg);
+		background-size: 1500px;
+		background-repeat: no-repeat;
+		
+		}
+		.pc_games_background
+		{
+			height: 700px;
+			width: 100%;
+			background-color: red;
+			background-image: url(./pc_games.jpg);
+			background-size: 1500px;
+			background-repeat: no-repeat;
+		
+		}
+		.details_background
+		{
+		height: 700px;
+		width: 100%;
+		background-color: red;
+		background-image: url(./details.jpg);
+		background-size: 1500px;
+		background-repeat: no-repeat;
+		
+		}
+
+		.question_box
+		{
+			width: 1072px;
+			height: 432px;
+			background-color: white;
+			margin: auto;
+			border-radius: 14px;
+			background-image: url(./it_background.jpg);
+			opacity: 1.5;
+			background-repeat: no-repeat;
+			background-size: 1081px;
+		}
 	</style>
 </head>
 <body>
@@ -128,22 +192,25 @@
 	</div>
 	<div class="quiz_block"></div>
 	</div>
-	<div id="profile" class="design_2 profile_background" >
-			
-		</div>
-		<div id="IT" class="design_2">
+	<div id="profile" class="design_2 profile_background" ></div>
+		<div  class="design_2 it_background">
 			<h1>IT</h1>
+			<div class="question_box" id="IT"></div>
+			<form method="post">
+				<input type="text" class="ans_box">
+			</form>
+
 		</div>
-		<div id="Wildlife" class="design_2">
+		<div id="Wildlife" class="design_2 wildlife_background">
 			<h1>Wildlife</h1>
 		</div>
-		<div id="sports" class="design_2">
+		<div id="sports" class="design_2 sports_background">
 			<h1>Sports</h1>
 		</div>
-		<div id="pc_games" class="design_2">
+		<div id="pc_games" class="design_2 pc_games_background">
 			<h1>PC_GAMES</h1>
 		</div>
-		<div id="details" class="design_2">
+		<div id="details" class="design_2 details_background">
 			<h1>DETAILS</h1>
 		</div>
 	</div>
@@ -179,7 +246,8 @@
 				}
 			});		
 		});
-		$('.it').click(function(){
+		$('.it').click(function()
+		{
 			$('.design').hide();
 			$('#sports').hide();
 			$('#details').hide();
@@ -188,15 +256,16 @@
 			$('#Wildlife').hide();
 			$('#profile').hide();
 			$('#IT').show();
-
 			$.ajax({
 			url: 'backend_it.php',
 			type: 'POST',
 			success:function(data)
 			{
-			$('#IT').html(data);
+				$('#IT').html(data);
 			}
 			});	
+
+			
 		});
 		$('.wildlife').click(function(){
   			$('#profile').hide();

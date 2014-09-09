@@ -142,6 +142,66 @@
 			color: black;
 			text-align: center;
 		}
+		.profile_background
+		{
+			height: 700px;
+		    width: 100%;
+		    background-color: red;
+		    background-image: url(./profile.jpg);
+		    background-size: 1500px;
+		    background-repeat: no-repeat;
+		    
+		}
+		.it_background
+		{
+		height: 700px;
+		width: 100%;
+		background-color: red;
+		background-image: url(./it.jpg);
+		background-size: 1500px;
+		background-repeat: no-repeat;
+		opacity: 0.4;
+		}
+		.wildlife_background
+		{
+		height: 700px;
+		width: 100%;
+		background-color: red;
+		background-image: url(./wildlife.jpg);
+		background-size: 1500px;
+		background-repeat: no-repeat;
+		opacity: 0.4;
+		}
+		.sports_background
+		{
+		height: 700px;
+		width: 100%;
+		background-color: red;
+		background-image: url(./sports.jpg);
+		background-size: 1500px;
+		background-repeat: no-repeat;
+		opacity: 0.4;
+		}
+		.pc_games_background
+		{
+			height: 700px;
+			width: 100%;
+			background-color: red;
+			background-image: url(./pc_games.jpg);
+			background-size: 1500px;
+			background-repeat: no-repeat;
+			opacity: 0.4;
+		}
+		.details_background
+		{
+		height: 700px;
+		width: 100%;
+		background-color: red;
+		background-image: url(./details.jpg);
+		background-size: 1500px;
+		background-repeat: no-repeat;
+		opacity: 0.4;
+		}
 	</style>
 </head>
 <body>
@@ -194,22 +254,20 @@
 			<input type="submit" name="submit_2" value="Submit">
 		</form>
 	</div>
-		<div id="profile" class="design_2" >
-			<h1>Profile</h1>
-		</div>
-		<div id="IT" class="design_2">
+		<div id="profile" class="design_2 profile_background" ></div>
+		<div id="IT" class="design_2 it_background">
 			<h1>IT</h1>
 		</div>
-		<div id="Wildlife" class="design_2">
+		<div id="Wildlife" class="design_2 wildlife_background">
 			<h1>Wildlife</h1>
 		</div>
-		<div id="sports" class="design_2">
+		<div id="sports" class="design_2 sports_background">
 			<h1>Sports</h1>
 		</div>
-		<div id="pc_games" class="design_2">
+		<div id="pc_games" class="design_2 pc_games_background">
 			<h1>PC_GAMES</h1>
 		</div>
-		<div id="details" class="design_2">
+		<div id="details" class="design_2 details_background">
 			<h1>DETAILS</h1>
 		</div>
 	</div>
