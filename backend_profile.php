@@ -3,25 +3,31 @@
 <head>
   <title></title>
   <style type="text/css">
-  .background_image
+  .edit
   {
-    height: 700px;
-      width: 100%;
-      background-color: red;
-      background-image: url(./profile.jpg);
-      background-size: 1500px;
-      background-repeat: no-repeat;
-      opacity: 0.4;
-       }
+  width: 32px;
+  height: 65px;
+  color: rgb(126, 173, 151);
+  margin-left: 1396px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-bottom: -85px;
+  margin-top: auto;
+  padding-top: 101px;
+  }
   </style>
 </head>
 <body>
-<div class="background_image"></div>
+<div class="edit">
+<u><i>edit</i></u>
+</div>
 </body>
 </html>
 <?php
 session_start();
 
+echo "<br><br>";
+echo "YOUR User Id is : ";
 echo $_SESSION['u_id'];
 echo "<br>";
 $u_id = $_SESSION['u_id'];
@@ -35,7 +41,7 @@ $l_name = " SELECT l_name FROM create_quiz WHERE u_id= '$u_id'";
 $r_l_name = mysql_query($l_name);
 $row_l_name = mysql_fetch_array($r_l_name);
 
-$u_name = " SELECT l_name FROM create_quiz WHERE u_id= '$u_id'";
+$u_name = " SELECT u_name FROM create_quiz WHERE u_id= '$u_id'";
 $r_u_name = mysql_query($u_name);
 $row_u_name = mysql_fetch_array($r_u_name);
 
@@ -47,16 +53,16 @@ $gender = " SELECT gender FROM create_quiz WHERE u_id= '$u_id'";
 $r_gender = mysql_query($gender);
 $row_gender = mysql_fetch_array($r_gender);
 
-echo "Name  :";
+echo "Name  : ";
 echo $row_f_name['f_name']."   ".$row_l_name['l_name'];
 echo "<br>";
-echo "Username  :";
+echo "Username  : ";
 echo $row_u_name['u_name'];
 echo "<br>";
-echo "Date of birth  ";
+echo "Date of birth : ";
 echo $row_dob['dob'];
 echo "<br>";
-echo "Gender";
-echo $row_gender;
+echo "Gender : ";
+echo $row_gender['gender'];
 
 ?>  

@@ -91,6 +91,17 @@
 			color: black;
 			text-align: left;
 			margin-left: 2px;
+			
+		}
+		.profile_background
+		{
+			height: 700px;
+		    width: 100%;
+		    background-color: red;
+		    background-image: url(./profile.jpg);
+		    background-size: 1500px;
+		    background-repeat: no-repeat;
+		    
 		}
 	</style>
 </head>
@@ -117,8 +128,8 @@
 	</div>
 	<div class="quiz_block"></div>
 	</div>
-	<div id="profile" class="design_2" >
-			<h1>Profile</h1>
+	<div id="profile" class="design_2 profile_background" >
+			
 		</div>
 		<div id="IT" class="design_2">
 			<h1>IT</h1>
