@@ -2,19 +2,8 @@
 <html>
 <head>
   <title></title>
+  <link href='http://fonts.googleapis.com/css?family=Lobster|Shadows+Into+Light' rel='stylesheet' type='text/css'>
   <style type="text/css">
-  .edit
-  {
-  width: 32px;
-  height: 65px;
-  color: rgb(126, 173, 151);
-  margin-left: 1396px;
-  cursor: pointer;
-  font-size: 20px;
-  margin-bottom: -85px;
-  margin-top: auto;
-  padding-top: 101px;
-  }
   .answer1
   {
   	width: 100px;
@@ -24,14 +13,23 @@
 	margin-left: 28px;
 	border-radius: 21px;
 	font-size: 27px;
+
   }
   .submit
   {
-  	width: 100px;
-	height: 46px;
+  	width: 247px;
+	height: 67px;
 	border-radius: 46px;
-	margin-left: 426px;
-	margin-top: 26px;
+	margin-left: 376px;
+	margin-top: 8px;
+	background-color: rgb(152, 209, 164);
+	font-size: 34px;
+	background-image: url(./button.jpg);
+	background-repeat: no-repeat;
+	background-size: 2454px;
+	color: white;
+	font-style: Shadows+Into+Light;
+
 	}
 	span.white-text
 	{
@@ -44,9 +42,6 @@
 <?php
 session_start();
 
-echo "<br>";
-echo "YOUR User Id is : ";
-echo $_SESSION['u_id'];
 echo "<br>";
 $u_id = $_SESSION['u_id'];
 	$i=1;
@@ -89,8 +84,8 @@ $u_id = $_SESSION['u_id'];
 		//secho $i;
 		//echo "<br>";
 
-		echo $i;
-		echo $row_question['question'];
+		echo $i.''.$row_question['question'];
+
 		echo "<br>";
 
 		$size1 = strlen($row_option_1['option_1']);
@@ -138,7 +133,7 @@ $u_id = $_SESSION['u_id'];
 	
 	<input type="text" name="answer" class="answer1" placeholder="Answer">
 	
-	<button class="submit">Submit</button>
+	<button class="submit">Next Question</button>
 </form>
 </body>
 

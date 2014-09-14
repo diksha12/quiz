@@ -27,11 +27,18 @@
   }
   .submit
   {
-  	width: 100px;
-	height: 46px;
+  	width: 247px;
+	height: 67px;
 	border-radius: 46px;
-	margin-left: 426px;
-	margin-top: 26px;
+	margin-left: 376px;
+	margin-top: 8px;
+	background-color: rgb(152, 209, 164);
+	font-size: 34px;
+	background-image: url(./button.jpg);
+	background-repeat: no-repeat;
+	background-size: 2454px;
+	color: white;
+	font-style: Shadows+Into+Light;
 	}
 	span.white-text
 	{
@@ -89,8 +96,7 @@ $u_id = $_SESSION['u_id'];
 		//secho $i;
 		//echo "<br>";
 
-		echo $i;
-		echo $row_question['question'];
+		echo $i.''.$row_question['question'];
 		echo "<br>";
 
 		$size1 = strlen($row_option_1['option_1']);
@@ -138,7 +144,7 @@ $u_id = $_SESSION['u_id'];
 	
 	<input type="text" name="answer" class="answer1" placeholder="Answer">
 	
-	<button class="submit">Submit</button>
+	<button class="submit">Next Question</button>
 </form>
 </body>
 

@@ -76,6 +76,8 @@
 			height: 500px;
 			width: 1516px;
 			background-color: #DE213B;
+			background-image: url(./quiz.jpg);
+			opacity: 0.7;
 
 		}
 		.design_2
@@ -98,6 +100,7 @@
 		    background-image: url(./profile.jpg);
 		    background-size: 1500px;
 		    background-repeat: no-repeat;
+		    padding-left: 30px;
 		    
 		}
 		.it_background
@@ -149,13 +152,14 @@
 		background-image: url(./details.jpg);
 		background-size: 1500px;
 		background-repeat: no-repeat;
+		padding-left: 20px;
 		
 		}
 
 		.question_box_it
 		{
 			width: 1072px;
-			height: 432px;
+			height: 560px;
 			background-color: white;
 			margin: auto;
 			border-radius: 14px;
@@ -167,7 +171,7 @@
 		.question_box_wildlife
 		{
 			width: 1072px;
-			height: 432px;
+			height: 560px;
 			background-color: white;
 			margin: auto;
 			border-radius: 14px;
@@ -176,11 +180,12 @@
 			background-repeat: no-repeat;
 			background-size: 1081px;
 			padding-left: 10px;
+
 		}
 		.question_box_sports
 		{
 			width: 1072px;
-			height: 432px;
+			height: 560px;
 			background-color: white;
 			margin: auto;
 			border-radius: 14px;
@@ -189,6 +194,21 @@
 			background-repeat: no-repeat;
 			background-size: 1081px;
 			padding-left: 10px;
+			color: rgb(216, 228, 213);
+		}
+		.question_box_pc_games
+		{
+			width: 1072px;
+			height: 560px;
+			background-color: white;
+			margin: auto;
+			border-radius: 14px;
+			background-image: url(./games_background.jpg);
+			opacity: 1.5;
+			background-repeat: no-repeat;
+			background-size: 1081px;
+			padding-left: 10px;
+			color: rgb(216, 228, 213);
 		}
 	</style>
 </head>
@@ -218,23 +238,24 @@
 	<div id="profile" class="design_2 profile_background" ></div>
 
 	<div id="IT" class="design_2 it_background">
-		<h1>it</h1>
+		
 		<div class="question_box_it"></div>
 	</div>
 	
 		<div id="Wildlife" class="design_2 wildlife_background">
-			<h1>Wildlife</h1>
+		
 			<div class="question_box_wildlife"></div>
 		</div>
 		<div id="sports" class="design_2 sports_background">
-			<h1>Sports</h1>
+		
 			<div class="question_box_sports"></div>
 		</div>
 		<div id="pc_games" class="design_2 pc_games_background">
-			<h1>PC_GAMES</h1>
+		
+			<div class="question_box_pc_games"></div>
 		</div>
 		<div id="details" class="design_2 details_background">
-			<h1>DETAILS</h1>
+		
 		</div>
 	</div>
 
@@ -345,7 +366,7 @@
 				url: 'backend_pc_games.php',
 				type: 'POST',
 				success:function(data){
-					$('#pc_games').html(data);
+					$('.question_box_pc_games').html(data);
 				}
 			});		
 			});
