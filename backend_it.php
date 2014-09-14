@@ -15,33 +15,46 @@
   margin-top: auto;
   padding-top: 101px;
   }
-  .answer
+  .answer1
   {
   	width: 100px;
-  	height: 50px;
-  	background-color: red;
-  	border-radius: 3px;
+	height: 50px;
+	background-color: rgb(229, 208, 208);
+	margin-bottom: -67px;
+	margin-left: 28px;
+	border-radius: 21px;
+	font-size: 27px;
   }
+  .submit
+  {
+  	width: 100px;
+	height: 46px;
+	border-radius: 46px;
+	margin-left: 426px;
+	margin-top: 26px;
+	}
+	span.white-text
+	{
+    margin: 300px;}
+    span.white-text_1
+	{
+    margin: 20px;}
   </style>
-</head>
-<body>
-<form method="post">
-	<div class="answer"></div>
-	<button>Submit</button>
-</form>
-</body>
-</html>
+
 <?php
 session_start();
 
-echo "<br><br>";
+echo "<br>";
 echo "YOUR User Id is : ";
 echo $_SESSION['u_id'];
 echo "<br>";
 $u_id = $_SESSION['u_id'];
+	$i=1;
+	do {
 
-		$que = rand(1,21);
-		echo $que;
+	
+		$que = rand(1,20);
+		//echo $que;
 		$link = mysql_connect('localhost','root','');
 		mysql_select_db('database');
 
@@ -74,26 +87,61 @@ $u_id = $_SESSION['u_id'];
 		$row_correct = mysql_fetch_array($r_correct);
 
 		//secho $i;
-		echo "<br>";
+		//echo "<br>";
 
+		echo $i;
 		echo $row_question['question'];
 		echo "<br>";
 
-		echo $row_option_1['option_1'];
+		$size1 = strlen($row_option_1['option_1']);
+		$size2 = strlen($row_option_2['option_2']);
+		$size3 = strlen($row_option_3['option_3']);
+		$size4 = strlen($row_option_4['option_4']);
+
+		if (($size1==10)&&($size2==10)&&($size3==10)&&($size4==10)) 
+		{
+		echo '<span class="white-text_1"> &nbsp;'.$row_option_1['option_1']    .       "</span>\n";
+		echo '<span class="white-text"> &nbsp;' .$row_option_2['option_2']     .       "</span>\n";
+
 		echo "<br>";
 
-		echo $row_option_2['option_2'];
-		echo "<br>";
-
-		echo $row_option_3['option_3'];
-		echo "<br>";
-
-		echo $row_option_4['option_4'];
-		echo "<br>";
-
-		echo $row_correct['correct'];
-		echo "<br>";
-		if ($_SERVER['REQUEST_METHOD']=='POST') {
-			
+		echo '<span class="white-text_1"> &nbsp;'.$row_option_3['option_3']    .       "</span>\n";
+		echo '<span class="white-text"> &nbsp;' .$row_option_4['option_4']     .       "</span>\n";	
 		}
+
+		else
+		{
+			echo $row_option_1['option_1'];
+			echo "<br>";
+
+			echo $row_option_2['option_2'];
+			echo "<br>";
+
+			echo $row_option_3['option_3'];
+			echo "<br>";
+
+			echo $row_option_4['option_4'];
+			echo "<br>";
+		}
+		
+	if ($_SERVER['REQUEST_METHOD']=='POST') 
+	{
+		$pass = $_POST['answer'];
+	}
+
+} while ( ($i <= 10)&&(isset($_POST['answer'])));
+		
 ?>  
+</head>
+<body>
+<form method="post">
+	
+	<input type="text" name="answer" class="answer1" placeholder="Answer">
+	
+	<button class="submit">Submit</button>
+</form>
+</body>
+
+</html>
+
+

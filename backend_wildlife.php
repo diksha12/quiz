@@ -54,7 +54,7 @@ $u_id = $_SESSION['u_id'];
 
 	
 		$que = rand(1,20);
-		echo $que;
+		//echo $que;
 		$link = mysql_connect('localhost','root','');
 		mysql_select_db('database');
 
@@ -82,12 +82,12 @@ $u_id = $_SESSION['u_id'];
 		$r_option_4 = mysql_query($option_4);
 		$row_option_4 = mysql_fetch_array($r_option_4);
 
-		$correct = "  SELECT correct FROM question_database_it WHERE que_n= '$que'";
+		$correct = "  SELECT correct FROM question_database_wildlife WHERE que_n= '$que'";
 		$r_correct = mysql_query($correct);
 		$row_correct = mysql_fetch_array($r_correct);
 
 		//secho $i;
-		echo "<br>";
+		//echo "<br>";
 
 		echo $i;
 		echo $row_question['question'];
@@ -126,7 +126,7 @@ $u_id = $_SESSION['u_id'];
 		
 	if ($_SERVER['REQUEST_METHOD']=='POST') 
 	{
-		echo $_POST['answer'];
+		$pass = $_POST['answer'];
 	}
 
 } while ( ($i <= 10)&&(isset($_POST['answer'])));
@@ -136,10 +136,12 @@ $u_id = $_SESSION['u_id'];
 <body>
 <form method="post">
 	
-	<input type="text" name="answer" placeholder="Answer" class="answer1">
+	<input type="text" name="answer" class="answer1" placeholder="Answer">
 	
 	<button class="submit">Submit</button>
 </form>
 </body>
 
 </html>
+
+

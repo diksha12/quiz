@@ -152,7 +152,7 @@
 		
 		}
 
-		.question_box
+		.question_box_it
 		{
 			width: 1072px;
 			height: 432px;
@@ -175,6 +175,20 @@
 			opacity: 1.5;
 			background-repeat: no-repeat;
 			background-size: 1081px;
+			padding-left: 10px;
+		}
+		.question_box_sports
+		{
+			width: 1072px;
+			height: 432px;
+			background-color: white;
+			margin: auto;
+			border-radius: 14px;
+			background-image: url(./sports_background.jpg);
+			opacity: 1.5;
+			background-repeat: no-repeat;
+			background-size: 1081px;
+			padding-left: 10px;
 		}
 	</style>
 </head>
@@ -205,6 +219,7 @@
 
 	<div id="IT" class="design_2 it_background">
 		<h1>it</h1>
+		<div class="question_box_it"></div>
 	</div>
 	
 		<div id="Wildlife" class="design_2 wildlife_background">
@@ -213,6 +228,7 @@
 		</div>
 		<div id="sports" class="design_2 sports_background">
 			<h1>Sports</h1>
+			<div class="question_box_sports"></div>
 		</div>
 		<div id="pc_games" class="design_2 pc_games_background">
 			<h1>PC_GAMES</h1>
@@ -267,13 +283,13 @@
 			$('.design_1').hide();
 			$('#Wildlife').hide();
 			$('#profile').hide();
-			$('.IT').show();
+			$('#IT').show();
 			$.ajax({
 			url: 'backend_it.php',
 			type: 'POST',
 			success:function(data)
 			{
-				$('#IT_block').html(data);
+				$('.question_box_it').html(data);
 			}
 			});	
 
@@ -311,7 +327,7 @@
 				url: 'backend_sports.php',
 				type: 'POST',
 				success:function(data){
-					$('#sports').html(data);
+					$('.question_box_sports').html(data);
 				}
 			});		
 		});
