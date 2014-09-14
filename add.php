@@ -96,7 +96,7 @@
 			position: relative;
 			margin-top: 63px;
 			cursor: pointer;
-			display: inline-block;
+			display: inline;
 		}
 		.in_box
 		{	
@@ -142,7 +142,7 @@
 	<form method="post" >
 		username: <span style="display:inline-block; width: 135px; "></span> Password:<br>
 		<input type="text" name="user_name" >
-		<span style="display:inline-block; width: 26px; "></span>
+		<span style="display:inline-block; width: 10px; "></span>
 		<input type="password" name="pass">
 		<span style="display:inline-block; width: 10px; "></span>
 		<input type="submit" value="Log In" class="Log_in" id="Log_in"><br>

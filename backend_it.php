@@ -46,14 +46,22 @@
     span.white-text_1
 	{
     margin: 20px;}
+    .radio_1
+    {
+    	margin-left: -800px;
+    }
   </style>
+<body>
+<form>
+	<input type="radio" class="radio_1">
+</form>
+</body>
 
 <?php
 session_start();
 
 echo "<br>";
-echo "YOUR User Id is : ";
-echo $_SESSION['u_id'];
+
 echo "<br>";
 $u_id = $_SESSION['u_id'];
 	$i=1;
@@ -104,7 +112,7 @@ $u_id = $_SESSION['u_id'];
 		$size3 = strlen($row_option_3['option_3']);
 		$size4 = strlen($row_option_4['option_4']);
 
-		if (($size1==10)&&($size2==10)&&($size3==10)&&($size4==10)) 
+		if (($size1===10)&&($size2===10)&&($size3===10)&&($size4===10)) 
 		{
 		echo '<span class="white-text_1"> &nbsp;'.$row_option_1['option_1']    .       "</span>\n";
 		echo '<span class="white-text"> &nbsp;' .$row_option_2['option_2']     .       "</span>\n";
@@ -132,7 +140,7 @@ $u_id = $_SESSION['u_id'];
 		
 	if ($_SERVER['REQUEST_METHOD']=='POST') 
 	{
-		$pass = $_POST['answer'];
+		
 	}
 
 } while ( ($i <= 10)&&(isset($_POST['answer'])));
@@ -145,6 +153,7 @@ $u_id = $_SESSION['u_id'];
 	<input type="text" name="answer" class="answer1" placeholder="Answer">
 	
 	<button class="submit">Next Question</button>
+	
 </form>
 </body>
 

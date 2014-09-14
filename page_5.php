@@ -97,7 +97,7 @@
 			font-size: 52px;
 			font-style: open-sans;
 			color: white;
-			text-align: center;
+			
 		}
 		.design input
 		{
@@ -122,7 +122,7 @@
 			font-size: 30px;
 			font-style: open-sans;
 			color: black;
-			text-align: center;
+			
 		}
 		.design_1 input
 		{
@@ -140,7 +140,7 @@
 			font-size: 30px;
 			font-style: open-sans;
 			color: black;
-			text-align: center;
+			
 		}
 		.profile_background
 		{
@@ -160,7 +160,7 @@
 		background-image: url(./it.jpg);
 		background-size: 1500px;
 		background-repeat: no-repeat;
-		opacity: 0.4;
+		
 		}
 		.wildlife_background
 		{
@@ -170,7 +170,7 @@
 		background-image: url(./wildlife.jpg);
 		background-size: 1500px;
 		background-repeat: no-repeat;
-		opacity: 0.4;
+		
 		}
 		.sports_background
 		{
@@ -180,7 +180,7 @@
 		background-image: url(./sports.jpg);
 		background-size: 1500px;
 		background-repeat: no-repeat;
-		opacity: 0.4;
+		
 		}
 		.pc_games_background
 		{
@@ -190,7 +190,7 @@
 			background-image: url(./pc_games.jpg);
 			background-size: 1500px;
 			background-repeat: no-repeat;
-			opacity: 0.4;
+			
 		}
 		.details_background
 		{
@@ -200,7 +200,61 @@
 		background-image: url(./details.jpg);
 		background-size: 1500px;
 		background-repeat: no-repeat;
-		opacity: 0.4;
+		
+		}
+		.question_box_it
+		{
+			width: 1072px;
+			height: 560px;
+			background-color: white;
+			margin: auto;
+			border-radius: 14px;
+			background-image: url(./it_background.jpg);
+			
+			background-repeat: no-repeat;
+			background-size: 1081px;
+		}
+		.question_box_wildlife
+		{
+			width: 1072px;
+			height: 560px;
+			background-color: white;
+			margin: auto;
+			border-radius: 14px;
+			background-image: url(./wildlife_background.jpg);
+			
+			background-repeat: no-repeat;
+			background-size: 1081px;
+			padding-left: 10px;
+
+		}
+		.question_box_sports
+		{
+			width: 1072px;
+			height: 560px;
+			background-color: white;
+			margin: auto;
+			border-radius: 14px;
+			background-image: url(./sports_background.jpg);
+			
+			background-repeat: no-repeat;
+			background-size: 1081px;
+			padding-left: 10px;
+			color: rgb(216, 228, 213);
+		}
+		.question_box_pc_games
+		{
+			width: 1072px;
+			height: 560px;
+			background-color: white;
+			margin: auto;
+			border-radius: 14px;
+			background-image: url(./games_background.jpg);
+			
+			background-repeat: no-repeat;
+			background-size: 1081px;
+			padding-left: 10px;
+			color: rgb(216, 228, 213);
 		}
 	</style>
 </head>
@@ -255,34 +309,47 @@
 		</form>
 	</div>
 		<div id="profile" class="design_2 profile_background" ></div>
-		<div id="IT" class="design_2 it_background">
-			<h1>IT</h1>
-		</div>
+
+	<div id="IT" class="design_2 it_background">
+		
+		<div class="question_box_it"></div>
+	</div>
+	
 		<div id="Wildlife" class="design_2 wildlife_background">
-			<h1>Wildlife</h1>
+		
+			<div class="question_box_wildlife"></div>
 		</div>
 		<div id="sports" class="design_2 sports_background">
-			<h1>Sports</h1>
+		
+			<div class="question_box_sports"></div>
 		</div>
 		<div id="pc_games" class="design_2 pc_games_background">
-			<h1>PC_GAMES</h1>
+		
+			<div class="question_box_pc_games"></div>
 		</div>
 		<div id="details" class="design_2 details_background">
-			<h1>DETAILS</h1>
+		
 		</div>
 	</div>
 
 	<script type="text/javascript">
 		$('.design_1').hide();
+		//$('.design_2').hide();
 		$('#details').hide();
 		$('#profile').hide();
 		$('#IT').hide();
+		$('#IT_block').hide();
 		$('#Wildlife').hide();
 		$('#sports').hide();
 		$('#pc_games').hide();
+		$('.quiz_block').show();
+
+
+
 		$('.profile').click(function(){
-			$('#Wildlife').hide()
-			$('#details').hide();;
+			$('#Wildlife').hide();
+			$('#details').hide();
+			$('.quiz_block').hide();
 			$('#sports').hide();
 			$('#pc_games').hide();
 			$('#IT').hide();
@@ -298,24 +365,27 @@
 				}
 			});		
 		});
-		$('.it').click(function(){
+		$('.it').click(function()
+		{
 			$('.design').hide();
 			$('#sports').hide();
 			$('#details').hide();
 			$('#pc_games').hide();
+			$('.quiz_block').hide();
 			$('.design_1').hide();
 			$('#Wildlife').hide();
 			$('#profile').hide();
 			$('#IT').show();
-
 			$.ajax({
 			url: 'backend_it.php',
 			type: 'POST',
 			success:function(data)
 			{
-			$('#IT').html(data);
+				$('.question_box_it').html(data);
 			}
 			});	
+
+			
 		});
 		$('.wildlife').click(function(){
   			$('#profile').hide();
@@ -324,8 +394,16 @@
 			$('#details').hide();;
   			$('.design').hide();
 			$('.design_1').hide();
+			$('.quiz_block').hide();
 			$('#IT').hide();
 			$('#Wildlife').show();
+			$.ajax({
+				url: 'backend_wildlife.php',
+				type: 'POST',
+				success:function(data){
+					$('.question_box_wildlife').html(data);
+				}
+			});		
 		});
 		$('.sports').click(function(){
   			$('#profile').hide();
@@ -333,9 +411,17 @@
 			$('#pc_games').hide();
   			$('.design').hide();
 			$('.design_1').hide();
+			$('.quiz_block').hide();
 			$('#details').hide();
 			$('#IT').hide();
 			$('#sports').show();
+			$.ajax({
+				url: 'backend_sports.php',
+				type: 'POST',
+				success:function(data){
+					$('.question_box_sports').html(data);
+				}
+			});		
 		});
 		$('.pc_games').click(function(){
   			$('#profile').hide();
@@ -344,18 +430,35 @@
   			$('.design').hide();
 			$('.design_1').hide();
 			$('#IT').hide();
+			$('.quiz_block').hide();
 			$('#details').hide();
 			$('#pc_games').show();
+			$.ajax({
+				url: 'backend_pc_games.php',
+				type: 'POST',
+				success:function(data){
+					$('.question_box_pc_games').html(data);
+				}
+			});		
 			});
 		$('.details').click(function(){
   			$('#profile').hide();
   			$('#sports').hide();
   			$('#Wildlife').hide();
+  			$('.quiz_block').hide();
 			$('#pc_games').hide();
   			$('.design').hide();
 			$('.design_1').hide();
 			$('#IT').hide();
 			$('#details').show();
+
+			$.ajax({
+				url: 'backend_details.php',
+				type: 'POST',
+				success:function(data){
+					$('#details').html(data);
+				}
+			});	
 		});
 		$('.home').click(function(){
 			window.location.assign("/skillclas/quiz/page_3.php");

@@ -2,6 +2,9 @@
 <html>
 <head>
   <title></title>
+  <link rel="stylesheet" type="text/css" href="other.css">
+<link rel="stylesheet" type="text/css" href="reset.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <style type="text/css">
   .edit
   {
@@ -22,6 +25,11 @@
 <u><i>edit</i></u>
 </div>
 </body>
+<script type="text/javascript">
+  $('.edit').hover(function(){
+    $(this).append($("edit info"));
+  });
+</script>
 </html>
 <?php
 session_start();

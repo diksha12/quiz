@@ -167,6 +167,7 @@
 			opacity: 1.5;
 			background-repeat: no-repeat;
 			background-size: 1081px;
+			padding-left: 40px;
 		}
 		.question_box_wildlife
 		{
