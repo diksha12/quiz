@@ -15,10 +15,20 @@
   margin-top: auto;
   padding-top: 101px;
   }
+  .answer
+  {
+  	width: 100px;
+  	height: 50px;
+  	background-color: red;
+  	border-radius: 3px;
+  }
   </style>
 </head>
 <body>
-
+<form method="post">
+	<div class="answer"></div>
+	<button>Submit</button>
+</form>
 </body>
 </html>
 <?php

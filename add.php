@@ -191,7 +191,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST')
 				$res = mysql_query($query1);
 				echo mysql_error();
 				$row = mysql_fetch_array($res);
-				$cheack = $row['password'];				
+				$cheack = $row['password'];					
 				if ($cheack==$pass) 
 				{
 					header('location:page_3.php');

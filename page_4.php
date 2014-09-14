@@ -65,7 +65,7 @@
 		{
 			height: 70px;
 			width: 100%;
-			background-color: #FDE3A7;
+			background-color: #DE213B;
 			color: #674172;
 			padding-top: 20px;
 			font-size: 40px;
@@ -73,13 +73,10 @@
 		}
 		.quiz_block
 		{
-			height: 453px;
-			width: 773px;
-			border:2px solid;
-			border-color: blue;
-			margin: auto;
-			margin-top: 30px;
-			border-radius: 25px;
+			height: 500px;
+			width: 1516px;
+			background-color: #DE213B;
+
 		}
 		.design_2
 		{
@@ -167,6 +164,18 @@
 			background-repeat: no-repeat;
 			background-size: 1081px;
 		}
+		.question_box_wildlife
+		{
+			width: 1072px;
+			height: 432px;
+			background-color: white;
+			margin: auto;
+			border-radius: 14px;
+			background-image: url(./wildlife_background.jpg);
+			opacity: 1.5;
+			background-repeat: no-repeat;
+			background-size: 1081px;
+		}
 	</style>
 </head>
 <body>
@@ -191,18 +200,16 @@
 		Hello User...
 	</div>
 	<div class="quiz_block"></div>
-	</div>
-	<div id="profile" class="design_2 profile_background" ></div>
-		<div  class="design_2 it_background">
-			<h1>IT</h1>
-			<div class="question_box" id="IT"></div>
-			<form method="post">
-				<input type="text" class="ans_box">
-			</form>
 
-		</div>
+	<div id="profile" class="design_2 profile_background" ></div>
+
+	<div id="IT" class="design_2 it_background">
+		<h1>it</h1>
+	</div>
+	
 		<div id="Wildlife" class="design_2 wildlife_background">
 			<h1>Wildlife</h1>
+			<div class="question_box_wildlife"></div>
 		</div>
 		<div id="sports" class="design_2 sports_background">
 			<h1>Sports</h1>
@@ -219,18 +226,22 @@
 	<script type="text/javascript">
 		
 		$('.design_1').hide();
+		//$('.design_2').hide();
 		$('#details').hide();
 		$('#profile').hide();
 		$('#IT').hide();
+		$('#IT_block').hide();
 		$('#Wildlife').hide();
 		$('#sports').hide();
 		$('#pc_games').hide();
-		$('.quiz_block').hide();
+		$('.quiz_block').show();
+
 
 
 		$('.profile').click(function(){
-			$('#Wildlife').hide()
-			$('#details').hide();;
+			$('#Wildlife').hide();
+			$('#details').hide();
+			$('.quiz_block').hide();
 			$('#sports').hide();
 			$('#pc_games').hide();
 			$('#IT').hide();
@@ -252,16 +263,17 @@
 			$('#sports').hide();
 			$('#details').hide();
 			$('#pc_games').hide();
+			$('.quiz_block').hide();
 			$('.design_1').hide();
 			$('#Wildlife').hide();
 			$('#profile').hide();
-			$('#IT').show();
+			$('.IT').show();
 			$.ajax({
 			url: 'backend_it.php',
 			type: 'POST',
 			success:function(data)
 			{
-				$('#IT').html(data);
+				$('#IT_block').html(data);
 			}
 			});	
 
@@ -274,13 +286,14 @@
 			$('#details').hide();;
   			$('.design').hide();
 			$('.design_1').hide();
+			$('.quiz_block').hide();
 			$('#IT').hide();
 			$('#Wildlife').show();
 			$.ajax({
 				url: 'backend_wildlife.php',
 				type: 'POST',
 				success:function(data){
-					$('#Wildlife').html(data);
+					$('.question_box_wildlife').html(data);
 				}
 			});		
 		});
@@ -290,6 +303,7 @@
 			$('#pc_games').hide();
   			$('.design').hide();
 			$('.design_1').hide();
+			$('.quiz_block').hide();
 			$('#details').hide();
 			$('#IT').hide();
 			$('#sports').show();
@@ -308,6 +322,7 @@
   			$('.design').hide();
 			$('.design_1').hide();
 			$('#IT').hide();
+			$('.quiz_block').hide();
 			$('#details').hide();
 			$('#pc_games').show();
 			$.ajax({
@@ -322,6 +337,7 @@
   			$('#profile').hide();
   			$('#sports').hide();
   			$('#Wildlife').hide();
+  			$('.quiz_block').hide();
 			$('#pc_games').hide();
   			$('.design').hide();
 			$('.design_1').hide();
@@ -343,6 +359,7 @@
   			$('#details').hide();
   			$('#sports').hide();
   			$('#Wildlife').hide();
+  			$('.quiz_block').hide();
 			$('#pc_games').hide();
   			$('.design').hide();
 			$('.design_1').hide();
