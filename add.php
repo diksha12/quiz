@@ -13,7 +13,7 @@
 	}
 	.image_box
 		{
-			width: 1450px;
+			width: 100%;
 			height: 616px;
 			margin: auto;
 			background-image: url(./quiz_1.jpg);
@@ -61,27 +61,27 @@
 			background-color: #e74c3c;
 			font-size: 13px;
 			color: white;
-			margin-left: 894px;
+			margin-left: 764px;
 			height: 84px;
 			position: relative;
 			width: 458px;
 			font-family: open-sans;
 			text-align: justify;
-			margin-top: -78px;
+			margin-top: -84px;
 			padding-top: 20px;
 
 		}
 		.input_text
 		{
-		width: 70px;
-		height: 20px;
-		background-color: #2c3e50;
-		color: #95a5a6;
-		border: 7px;
-		font-size: 13px;
-		font-weight: 400;
-		border-color: white;
-		border-radius: 5px;
+			width: 70px;
+			height: 20px;
+			background-color: #2c3e50;
+			color: #95a5a6;
+			border: 7px;
+			font-size: 13px;
+			font-weight: 400;
+			border-color: white;
+			border-radius: 5px;
 		}
 		.ab
 		{
@@ -113,6 +113,19 @@
 			align-content: flex-end;
 			cursor: pointer;
 		}
+		.create
+		{
+			height: 100px;
+			width: 100px;
+			background-color: #e74c3c;
+			position: relative;
+			background-image: url(./create.png);
+			background-repeat: no-repeat;
+			background-size: 100px;
+			border-radius: 64px;
+			margin-left: 1230px;
+			cursor: pointer;
+		}
 		.button
 		{
 			margin-top: -667px;
@@ -133,11 +146,10 @@
 		<div class="in_box home">
 		<h2>Quizy Mainia</h2>
 		</div>
-		<div class="quiz_image">
-		</div>
+		<div class="quiz_image"></div>
 	</div>
-	<div><input type="button" class="ab" value="create an account" id="create_account">
-	</div>
+</div>
+<div class="create" id="create"></div>
 	<div class="form1">
 	<form method="post" >
 		username: <span style="display:inline-block; width: 135px; "></span> Password:<br>
@@ -151,6 +163,7 @@
 		<span style="display:inline-block; width: 65px; "></span>
 		<span id="login_error" style=" color :#ecf0f1; font-size :10px; cursor: pointer;" class='login_error'  ><u>can't log in?</u></span>
 	</form>
+
 	</div>
 	<div class="image_box"></div>
 	<div class="button"></div>
@@ -159,7 +172,17 @@
 	$('.button').click(function(){
 		window.location.assign("/skillclas/quiz/page_3.php");
 	});
-	$('#create_account').click(function(){
+	$('#create').hover(function(){
+		var $this = $(this); 
+            $this.data('initialText', $this.text());
+            $this.text("create account");
+	},
+	function() {
+            var $this = $(this);
+            $this.text($this.data('initialText'));
+        }
+	);
+	$('#create').click(function(){
 		window.location.assign("/skillclas/quiz/page_2.php")
 	});
 	$('#login_error').click(function(){
@@ -170,9 +193,10 @@
 </body>
 </html>
 <?php
+session_start();
 if ($_SERVER['REQUEST_METHOD']=='POST') 
 	{
-		session_start();
+		
 		if (isset($_POST['user_name'])) 
 		{
 		
@@ -184,7 +208,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST')
 			$stmt->bind_param('ss',$user_name, $pass);
 			$stmt->execute();
 			
-
 			$query1 = " SELECT password FROM create_quiz WHERE u_name='$user_name'";
  				$link1 = mysql_connect('localhost','root','');
  				mysql_select_db('database');

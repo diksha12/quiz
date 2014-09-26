@@ -54,13 +54,13 @@
 			width: 100%;
 			height: 70px;
 			background-color: #C0392B;
-			margin-top: 90px;
+			margin-top: 85px;
 			font-style: open-sans;
 		}
 		.option_window button
 		{
 			height: 70px;
-			width: 247px;
+			width: 240px;
 			color: black;
 			background-color: #F62459;
 			cursor: pointer;
