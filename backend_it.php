@@ -50,21 +50,22 @@
     {
     	margin-left: -800px;
     }
+    
   </style>
-<body>
-<form>
-	<input type="radio" class="radio_1">
-</form>
-</body>
 
 <?php
 session_start();
-
+$score=0;
 echo "<br>";
 
 echo "<br>";
 $u_id = $_SESSION['u_id'];
-	$i=1;
+	if($_SERVER['REQUEST_METHOD']!='POST' || $_SERVER['REQUEST_METHOD']=='POST' && !isset($_POST['i']))
+		$i=1;
+	elseif (isset($_POST['i'])) 
+	{
+		$i = $_POST['i'];
+	}
 	do {
 
 	
@@ -104,7 +105,7 @@ $u_id = $_SESSION['u_id'];
 		//secho $i;
 		//echo "<br>";
 
-		echo $i.''.$row_question['question'];
+		echo "Que"."  ".$i.' '.$row_question['question'];
 		echo "<br>";
 
 		$size1 = strlen($row_option_1['option_1']);
@@ -112,51 +113,59 @@ $u_id = $_SESSION['u_id'];
 		$size3 = strlen($row_option_3['option_3']);
 		$size4 = strlen($row_option_4['option_4']);
 
-		if (($size1===10)&&($size2===10)&&($size3===10)&&($size4===10)) 
+		if (($size1<=10)&&($size2<=10)&&($size3<=10)&&($size4<=10)) 
 		{
+
+		echo '<input type="radio" name="answer" value="1" >';
 		echo '<span class="white-text_1"> &nbsp;'.$row_option_1['option_1']    .       "</span>\n";
+		echo '<input type="radio" name="answer" value="2" >';
 		echo '<span class="white-text"> &nbsp;' .$row_option_2['option_2']     .       "</span>\n";
 
 		echo "<br>";
 
-		echo '<span class="white-text_1"> &nbsp;'.$row_option_3['option_3']    .       "</span>\n";
-		echo '<span class="white-text"> &nbsp;' .$row_option_4['option_4']     .       "</span>\n";	
+		echo '<span class="white-text_1"> &nbsp;'.'<input type="radio" name="answer" value="3" >'."</span>\n";
+		echo $row_option_3['option_3']    ;
+		echo '<span class="white-text"> &nbsp;' .'<input type="radio" name="answer" value="4" >'."</span>\n";
+		echo $row_option_4['option_4']     ;	
 		}
 
 		else
-		{
+		{	echo '<input type="radio" name="answer" value="1" >';
 			echo $row_option_1['option_1'];
 			echo "<br>";
 
+			echo '	<input type="radio" name="answer" value="2" >';
 			echo $row_option_2['option_2'];
 			echo "<br>";
 
+			echo '	<input type="radio" name="answer" value="3" >';
 			echo $row_option_3['option_3'];
 			echo "<br>";
 
+			echo '	<input type="radio" name="answer" value="4" >';
 			echo $row_option_4['option_4'];
 			echo "<br>";
 		}
-		
+		$result = "";
 	if ($_SERVER['REQUEST_METHOD']=='POST') 
 	{
-		
+		if(isset($_POST['answer']))
+			$result = $_POST['answer'];	
+		if ($row_correct['correct']==$result&&isset($result)) 
+		{
+		 $i++;	
+		 $score= $score+10;
+		}
+		else
+		{
+			$score = $score-2;
+			$i++;
+		}
 	}
 
 } while ( ($i <= 10)&&(isset($_POST['answer'])));
-		
-?>  
-</head>
-<body>
-<form method="post">
-	
-	<input type="text" name="answer" class="answer1" placeholder="Answer">
-	
-	<button class="submit">Next Question</button>
-	
-</form>
-</body>
-
-</html>
-
-
+	echo "<form method='post' action='backend_it.php'>
+		<input type='hidden' name='i' value='".$i."'>
+		<button class='submit'>Submit</button>
+	</form>";	
+?>

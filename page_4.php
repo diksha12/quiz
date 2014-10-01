@@ -54,7 +54,7 @@
 		.option_window button
 		{
 			height: 70px;
-			width: 247px;
+			width: 215px;
 			color: black;
 			background-color: #F62459;
 			cursor: pointer;

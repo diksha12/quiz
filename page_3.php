@@ -20,7 +20,7 @@
 		.page_3
 		{
 			height: 700px;
-			width: 1499px;
+			width: 100%;
 			background-color: #FDE3A7;
 		}
 		.in_box
@@ -86,7 +86,7 @@
 		{
 			width: 446px;
 			height: 581px;
-			margin-left: 1050px;
+			margin-left: 908px;
 			margin-top: -213px;
 			background-color: #C0392B;
 			border-radius: 109px;

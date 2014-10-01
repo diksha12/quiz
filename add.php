@@ -1,4 +1,8 @@
  <!DOCTYPE html>
+ <?php
+ob_start();
+session_start();
+?>
 <html>
 <head>
 	<title>home</title>
@@ -193,50 +197,50 @@
 </body>
 </html>
 <?php
-session_start();
+
 if ($_SERVER['REQUEST_METHOD']=='POST') 
 	{
+
 		
 		if (isset($_POST['user_name'])) 
 		{
 		
 		$link = new mysqli('localhost','root','','database');
-			$user_name = $_POST['user_name'];
-			$pass = $_POST['pass'];
-			$query ="INSERT INTO quiz_login_1 (username, password) VAlUES (?,?)";
-			$stmt = $link-> prepare($query);
-			$stmt->bind_param('ss',$user_name, $pass);
-			$stmt->execute();
+		$user_name = $_POST['user_name'];
+		$pass = $_POST['pass'];
+		$query ="INSERT INTO quiz_login_1 (username, password) VAlUES (?,?)";
+		$stmt = $link-> prepare($query);
+		$stmt->bind_param('ss',$user_name, $pass);
+		$stmt->execute();
 			
-			$query1 = " SELECT password FROM create_quiz WHERE u_name='$user_name'";
- 				$link1 = mysql_connect('localhost','root','');
- 				mysql_select_db('database');
-				$res = mysql_query($query1);
-				echo mysql_error();
-				$row = mysql_fetch_array($res);
-				$cheack = $row['password'];					
-				if ($cheack==$pass) 
-				{
-					header('location:page_3.php');
-				}
-				else
-				{
-					echo "<script type=\"text/javascript\">".
-					  "window.alert('Error in username or password');".
-		  				"</script>"; 
-				}
-			}
-			elseif (isset($_POST['u_name'])) 
+		$query1 = " SELECT password FROM create_quiz WHERE u_name='$user_name'";
+ 			$link1 = mysql_connect('localhost','root','');
+ 			mysql_select_db('database');
+			$res = mysql_query($query1);
+			echo mysql_error();
+			$row = mysql_fetch_array($res);
+			$cheack = $row['password'];					
+			if ($cheack==$pass) 
 			{
-				$link = new mysqli('localhost','root','','database');
-				$f_name = $_POST['name1'];
-				$l_name = $_POST['name2'];
-				$u_name = $_POST['user_name'];
-				$password = $_POST['password'];
-				$r_pass = $_POST['password1'];
-				$dob = $_POST['dob'];
-				$gender = $_POST['gender'];
-
+				header('location:page_3.php');
+			}
+			else
+			{
+				echo "<script type=\"text/javascript\">".
+				  "window.alert('Error in username or password');".
+		  			"</script>"; 
+			}
+		}
+		elseif (isset($_POST['u_name'])) 
+		{
+			$link = new mysqli('localhost','root','','database');
+			$f_name = $_POST['name1'];
+			$l_name = $_POST['name2'];
+			$u_name = $_POST['user_name'];
+			$password = $_POST['password'];
+			$r_pass = $_POST['password1'];
+			$dob = $_POST['dob'];
+			$gender = $_POST['gender'];
 				if ($password===$r_pass) 
 				{
 				
