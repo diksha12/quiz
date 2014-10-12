@@ -11,12 +11,142 @@
 	.box
 	{
 		width: 102%;
-		height: 900px;
+		height: 822px;
 		background-color: rgb(38, 37, 37);
 		padding: 0px;
 		margin: -10px;
-		cursor: pointer;
 		opacity: 0.4;
+	}
+	.secondbox
+	{
+		width: 400px;
+		height: 630px;
+		margin-left: 928px;
+	}
+	.login_div
+	{
+		height: 53px;
+		width: 93px;
+		position: relative;
+		margin-left: 100px;
+		background-repeat: no-repeat;
+		opacity: 1;
+		display: inline-block;
+		border-radius: 9px;
+		background-size: 285px;
+		cursor: pointer;
+		background-color: red;
+		font-size: 32px;
+		padding-left: 7px;
+		padding-top: 10px;
+		color: #ffff00;
+		font-family: Playball;
+	}
+		.login
+	{
+		width: 302px;
+		height: 120px;
+		position: relative;
+		margin-left: 50px;
+		display: inline-block;
+		border-radius: 9px;
+		background-size: 285px;
+		cursor: pointer;
+		background-color: red;
+		padding-left: 7px;
+		padding-top: 10px;
+		color: #ffff00;
+		font-family: Playball;
+		margin-top: 10px;
+	}
+	.create_div
+	{
+		height: 53px;
+		width: 242px;
+		position: relative;
+		margin-top: 10px;
+		margin-left: 100px;
+		background-repeat: no-repeat;
+		display: inline-block;
+		border-radius: 9px;
+		background-size: 285px;
+		cursor: pointer;
+		background-color: red;
+		font-size: 32px;
+		padding-left: 7px;
+		padding-top: 10px;
+		color: #ffff00;
+		font-family: Playball;	
+	}
+	.create
+	{
+		height: 346px;
+		width: 299px;
+		position: relative;
+		margin-top: 10px;
+		margin-left: 50px;
+		display: inline-block;
+		border-radius: 9px;
+		cursor: pointer;
+		background-color: red;
+		font-size: 10px;
+		padding-left: 7px;
+		padding-top: 10px;
+		color: #ffff00;
+		font-family: Playball;
+		font-size: 20px; 
+	}
+	.fname
+	{
+		width: 88px;
+		height: 30px;
+		border-radius: 3px;
+		margin-left: 45px;
+	}
+	.lname
+	{
+		width: 88px;
+		height: 30px;
+		border-radius: 3px;
+	}
+	.uname
+	{
+		width: 185px;
+		height: 30px;
+		border-radius: 3px;
+		margin-left: 13px;
+	}
+	.pass
+	{
+		width: 185px;
+		height: 30px;
+		border-radius: 3px;
+		margin-left: 8px;
+
+	}
+	.r_pass
+	{
+		width: 131px;
+		height: 30px;
+		border-radius: 3px;
+		margin-left: 8px;
+	}
+	.dob
+	{
+		width: 131px;
+		height: 30px;
+		border-radius: 3px;
+		margin-left: 41px;
+	}
+	.submit
+	{
+		width: 161px;
+		height: 40px;
+		background-color: yellow;
+		border-radius: 4px;
+		font-family: Playball;
+		font-size: 21px;
+		margin-left: 122px;
 	}
 	.box1
 	{
@@ -115,138 +245,16 @@
 	}
 	.box_prop
 	{
-		width: 300px;
-		height: 300px;
+		width: 275px;
+		height: 275px;
 		display: inline-block;
 		background-repeat: no-repeat;
 		margin-top: -4px;
 		margin-left: -4px;
-	}
-	.login_div
-	{
-		height: 53px;
-		width: 93px;
-		position: relative;
-		margin-top: -650px;
-		margin-left: 1406px;
-		background-repeat: no-repeat;
-		opacity: 0.8;
-		display: inline-block;
-		border-radius: 9px;
-		background-size: 285px;
 		cursor: pointer;
-		background-color: red;
-		font-size: 32px;
-		padding-left: 7px;
-		padding-top: 10px;
-		color: #ffff00;
-		font-family: Playball;
 	}
-	.create
-	{
-		height: 53px;
-		width: 242px;
-		position: relative;
-		margin-top: 30px;
-		margin-left: 1256px;
-		background-repeat: no-repeat;
-		opacity: 0.8;
-		display: inline-block;
-		border-radius: 9px;
-		background-size: 285px;
-		cursor: pointer;
-		background-color: red;
-		font-size: 32px;
-		padding-left: 7px;
-		padding-top: 10px;
-		color: #ffff00;
-		font-family: Playball;	
-	}
-	.hide
-	{
-		display: none;
-	}
-	.box_1
-	{
-		background-image: url(./box_1.jpg);
-		background-size: 300px;
-
-	}
-	.box_2
-	{
-		background-image: url(./box_2.jpg);
-		background-size: 375px;
-
-	}
-	.box_3
-	{
-		background-image: url(./box_3.jpg);
-		background-size: 338px;
-	}
-	.box_4
-	{
-		background-image: url(./box_4.jpg);
-		background-size: 300px;
-
-	}
-	.box_5
-	{
-		background-image: url(./box_5.jpg);
-		background-size: 411px;
-	}
-	.box_6
-	{
-		background-image: url(./box_6.jpg);
-		background-size: 339px;
-	}
-	.box_7
-	{
-		background-image: url(./box_7.jpg);
-		background-size: 300px;
-
-	}
-	.box_8
-	{
-		background-image: url(./box_8.jpg);
-		background-size: 456px;
-	}
-	.box_9
-	{
-		background-image: url(./box_9.jpg);
-		background-size: 395px;
-	}
-	.box_10
-	{ 
-		background-image: url(./box_10.jpg);
-		background-size: 433px;
-
-	}
-	.box_11
-	{
-		background-image: url(./box_11.jpg);
-		background-size: 300px;
-	}
-	.box_12
-	{
-		background-image: url(./box_12.jpg);
-		background-size: 435px;
-	}
-	.box_13
-	{
-		background-image: url(./box_13.jpg);
-		background-size: 300px;
-
-	}
-	.box_14
-	{
-		background-image: url(./box_14.jpg);
-		background-size: 390px;
-	}
-	.box_15
-	{		
-		background-image: url(./box_15.jpg);
-		background-size: 300px;
-	}
+	
+	
 </style>
 <body>
 
@@ -266,54 +274,97 @@
 	<div class="box13 box_prop" id="box13"></div>
 	<div class="box14 box_prop" id="box14"></div>
 	<div class="box15 box_prop" id="box15"></div>
-		
-	<div class="box_1 box_prop" id="box_1"></div>
-	<div class="box_2 box_prop" id="box_2"></div>
-	<div class="box_3 box_prop" id="box_3"></div>
-	<div class="box_4 box_prop" id="box_4"></div>
-	<div class="box_5 box_prop" id="box_5"></div>
-	<div class="box_6 box_prop" id="box_6"></div>
-	<div class="box_7 box_prop" id="box_7"></div>
-	<div class="box_8 box_prop" id="box_8"></div>
-	<div class="box_9 box_prop" id="box_9"></div>
-	<div class="box_10 box_prop" id="box_10"></div>
-	<div class="box_11 box_prop" id="box_11"></div>
-	<div class="box_12 box_prop" id="box_12"></div>
-	<div class="box_13 box_prop" id="box_13"></div>
-	<div class="box_14 box_prop" id="box_14"></div>
-	<div class="box_15 box_prop" id="box_15"></div>
-
+			
 </div>
-<div>
 	<div class="logo"></div>
+<div class="secondbox">
 	<div class="login_div"> <i><u>Login</u></i></div>
-	<div class="create"> <i><u>Create an account</u></i></div>
+	<div class="login">
+			<form method="post" >
+			username:<br> 
+			<input type="text" name="user_name" ><br>
+			Password:<br>
+			<input type="password" name="pass">
+			<input type="submit" value="Log In" class="Log_in" id="Log_in"><br>
+			<input type="checkbox">
+			<span style=" color :#ecf0f1; font-size :10px; " >keep me logged in</span>
+			<span style="display:inline-block; width: 55px; "></span>
+			<span id="login_error" style=" color :#ecf0f1; font-size :10px; cursor: pointer; "><u>can't log in?</u></span>
+		</form>
+		</div>	
+	<div class="create_div"> <i><u>Create an account</u></i></div>	
+	<div class="create">
+		<form method="post">
+			Name:
+			<input type="text" name="f_name" placeholder="First name" class="fname">
+			<input type="text" name="l_name" placeholder="Last name" class="lname"><br><br>
+			Username:
+			<input type="text" name="u_name" placeholder="User name" class="uname"><br><br>
+			Password :
+			<input type="password" name="password" placeholder="Password" class="pass"><br><br>
+			Repeat Password :
+			<input type="password" name="password1" placeholder="Repeat Password" class="r_pass"><br><br>
+			date of Birth :
+			<input type="date" name="dob" class="dob">
+			<br><br>
+			<input type="radio" class="check_f" value="Female" name="gender">
+			Female
+			<input type="radio" name="gender" class="check_m" value="male">
+			male
+			<br>
+			<input type="submit" value="Create my account" class="submit">
+		</form>
+	</div>
 </div>
-<script type="text/javascript">
-	
-	$(document).ready(function() 
-{ 
-
-	$('#box_1').hide();
-	$('#box_2').hide();
-	$('#box_3').hide();
-	$('#box_4').hide();
-	$('#box_5').hide();
-	$('#box_6').hide();
-	$('#box_7').hide();
-	$('#box_8').hide();
-	$('#box_9').hide();
-	$('#box_10').hide();
-	$('#box_11').hide();
-	$('#box_12').hide();
-	$('#box_13').hide();
-	$('#box_14').hide();
-	$('#box_15').hide();
-
-	$('.login_div').click(function()
-	{
-		window.location.assign("/skillclas/quiz/page_2.php");
-	});
-});
 </body>
+<script type="text/javascript">
+
+	$('.login').hide();
+	$('.create').hide();
+
+	$('.login_div').click(function(){
+		$('.create').hide();
+		$('.login').fadeToggle();
+	});
+	$('.create_div').click(function(){
+		$('.login').hide();
+		$('.create').fadeToggle();
+
+	});
+	$('#login_error').click(function(){
+		window.location.assign("/skillclas/quiz/error.php");
+	});
+
+</script>
 </html>
+<?php 
+	if ($_SERVER['REQUEST_METHOD']=='POST') 
+	{
+	 if (isset($_POST['user_name'])) 
+	 {
+	 	$user_name = $_POST['user_name'];
+	 	$pass = $_POST['pass'];
+
+	 	$link = new mysqli('localhost','root','','database');
+		$query ="INSERT INTO quiz_login_1 (username, password) VAlUES (?,?)";
+		$stmt = $link->prepare($query);
+		$stmt->bind_param('ss',$user_name, $pass);
+		$stmt->execute();
+
+			$link1 = mysql_connect('localhost','root','');
+ 			mysql_select_db('database');
+			$query1 = " SELECT password FROM quiz_create WHERE u_name='$user_name'";
+			$res = mysql_query($query1);
+			echo mysql_error();
+			$row = mysql_fetch_array($res);
+			$cheack = $row['password'];					
+			if ($cheack==$pass) 
+			{
+				echo mysql_error();
+				header('location: page2.php');
+			}
+
+	 	}
+	}	
+?>
+

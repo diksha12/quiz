@@ -4,6 +4,8 @@
 	<title>login compleate</title>
 	<link rel="stylesheet" type="text/css" href="other.css">
 	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<style type="text/css">
 	.box
 	{
@@ -17,7 +19,6 @@
 		height: 118px;
 		width: 286px;
 		position: relative;
-		background-color: blue;
 		margin-left: 232px;
 		background-image: url(./logo.jpg);
 		background-repeat: no-repeat;
@@ -31,7 +32,7 @@
 		width: 300px;
 		height: 500px;
 		display: inline-block;
-		margin-left: 1101px;
+		margin-left: 1032px;
 		margin-top: -272px;
 		background-color: rgb(224, 14, 14);
 		border-radius: 28px;
@@ -39,9 +40,11 @@
 	.List
 	{
 		color: rgb(237, 223, 0);
-		font-size: 32px;
+		font-size: 48px;
 		margin-top: 187px;
 		cursor: pointer;
+		list-style: none;
+		font-family: Calligraffitti;
 	}
 	</style>
 </head>
@@ -51,11 +54,20 @@
 <div class="box">
 	<div class="logo"></div>
 	<ul class="List">
-		<li><H1><u><i>Play Your Quiz</i></u></H1>
-		<li><H1><u><i>Create Your Qwn Quiz</i></u></H1>
+		<li class="li_1"><H1><i>Play Your Quiz</i></H1></li>
+		<li class="Li_2"><H1><i>Create Your Qwn Quiz</i></H1></li>
 	</ul>
 	<div class="credits"></div>
 </div>
+<script type="text/javascript">
+	$('.li_1').click(function(){
+		window.location.assign("/skillclas/quiz/page3.php");
+	});
+	$('.Li_2').click(function(){
+		window.location.assign("/skillclas/quiz/page3.php");
+	})
 
+</script>
 </body>
 </html>
+
